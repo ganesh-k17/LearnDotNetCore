@@ -52,6 +52,32 @@ public class ProductController : ControllerBase
   {
     return _context.Products.ToArray();
   }
+  
+  // or
+  
+  [HttpGet]
+  public ActionResult<IEnumerable<Product>> GetAllProducts()
+  {
+    var products = _context.Products.ToArray();
+    return Ok(products);  // return products with 200 OK status
+  }
+  
+  
+  [HttpGet, Route("api/products/{id}")] or  [HttpGet, Route("{id}")] // since the route is in controller (or ) [HttpGet("{id}")]
+  public Product Getproduct (int id)
+  {
+    var product = _context.Products.Find(id);
+    return product;
+  }
+  
+  // or 
+  
+  [HttpGet, Route("/products/{id}")]
+  public ActionResult Getproduct (int id)
+  {
+    var product = _context.Products.Find(id);
+    return Ok(product);
+  }
 }
 
 
