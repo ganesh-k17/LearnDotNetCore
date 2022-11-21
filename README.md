@@ -82,3 +82,33 @@ public class ProductController : ControllerBase
 
 
 ```
+
+## Error handling
+
+```c#
+ [HttpGet, Route("/products/{id}")]
+  public ActionResult Getproduct (int id)
+  {
+    var product = _context.Products.Find(id);
+    
+    if(product ==  null)
+      return NotFound();
+      
+    return Ok(product);
+  }
+```
+
+## Asynchroous Action
+
+```c#
+[HttpGet, Route("/products/{id}")]
+  public async Task<ActionResult> Getproduct (int id)
+  {
+    var product = await _context.Products.FindAsync(id);
+    
+    if(product ==  null)
+      return NotFound();
+      
+    return Ok(product);
+  }
+```
