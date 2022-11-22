@@ -1,12 +1,15 @@
 # Learn Dotnet core 
 
-```
+
+```bash
 dotnet new --list
 dotnet new webapi -o MyAPIProject # it would create a webapi project
 dotnet run  # to run the application
 install-package Microsoft.EntityFrameworkCore # to install entity framework package
 install-package Microsoft.EntityFrameworkCore.InMemory
+```
 
+```c#
 public class shopContext : DbContext
 {
   public ShopContext(DbContextOptions<ShopContext> options) : base(options)
