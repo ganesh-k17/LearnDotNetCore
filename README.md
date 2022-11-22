@@ -164,7 +164,7 @@ builder.Services.AddControllers()
 
 
 Updating Items:
-
+```c#
 [HttpPut("{id}")]
 public async Task<ActionResult> PutProduct(int id, [FromBody] Product product)
 {
@@ -191,3 +191,53 @@ public async Task<ActionResult> PutProduct(int id, [FromBody] Product product)
   }
   return NoContent();
 }
+```
+
+## Deleting Item
+
+```c#
+[HttpDelete("{id}")]
+public async Task<ActionResult> DeleteProduct(int id)
+{
+  var product = await _context.products.FindAsync(id);
+  
+  if(prodduct == null)
+    return NotFound();
+  
+  _context.Products.Remove(product)
+  await _context.SaveChangesAsync();
+  
+  return product;
+}
+```
+
+## Delete multiple items
+
+```c#
+[HttpDelete("{id}")]
+public async Task<ActionResult> DeleteMultipleProduct([FromQuery]int id)
+{
+  var products = new List<Product>();
+  foreach( var id in ids)
+  {
+    var product  = await _context.Products.FindAsync(id);
+    if(product == null)
+      return  NotFound();
+      
+    products.Add(product);      
+  }
+  
+  _context.Products.RemoveRange(products)
+  await _context.SaveChangesAsync();
+  
+  return Ok(products);
+}
+```
+
+## Next Steps
+
+* Advanced data retrieval
+* Versioning APIs
+* Securing APIs
+* API Design
+* ASP .Net Core Security
