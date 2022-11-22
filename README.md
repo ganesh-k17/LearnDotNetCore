@@ -112,3 +112,29 @@ public class ProductController : ControllerBase
     return Ok(product);
   }
 ```
+
+## Model Binding
+
+```
+[FromBody] - Data from the body of the HTTP requeest, mostly POST/PUT
+[FromRoute] - Data from the route template
+[FromQuery] - Data from the URL
+
+```
+
+Adding Items:
+
+```
+[HttpPost]
+public async Task<ActionResult<Product>> PostProduct(Product product)
+{
+  _context.Products.Add(product);
+  await _context.SaveChangesAsync();
+  
+  return CreatedAtAction(   // call the GetProduct action
+    "GetProduct",
+    new { id = product.Id },
+    product);
+}
+
+```
