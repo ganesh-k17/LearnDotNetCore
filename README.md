@@ -141,3 +141,23 @@ public async Task<ActionResult<Product>> PostProduct(Product product)
 }
 
 ```
+
+Model Validation:
+
+[Required] - attribute to use in model for validation
+
+```c#
+builder.Services.AddControllers()
+  .ConfiugreApiBehaviorOptions(options => 
+  {
+    options.SuppressModelStateInvalidFilter = true;  // This option is to stop validate on controller level.      
+                                                     // So we have to validate in action level as in the next code block
+  });
+```
+```c#
+ // In action method
+ 
+ if(!ModelState.IsValid){
+    return BadRequest();  
+ }
+```
