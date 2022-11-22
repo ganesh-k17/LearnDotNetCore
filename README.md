@@ -124,7 +124,7 @@ public class ProductController : ControllerBase
 
 Adding Items:
 
-```
+```c#
 [HttpPost]
 public async Task<ActionResult<Product>> PostProduct(Product product)
 {
