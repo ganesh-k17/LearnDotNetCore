@@ -161,3 +161,33 @@ builder.Services.AddControllers()
     return BadRequest();  
  }
 ```
+
+
+Updating Items:
+
+[HttpPut("{id}")]
+public async Task<ActionResult> PutProduct(int id, [FromBody] Product product)
+{
+  if(id != product.Id)
+  {
+    return BadRequest();
+  }
+  
+  _context.Entry(product).State = EntityState.Modified;
+  try
+  {
+    await _context.SsavchangesAsync();
+  }
+  catch
+  {
+    if(!_context.Products.Any(p => p.Id == id))
+    {
+      return NotFound();
+    }
+    else
+    {
+      throw;
+    }
+  }
+  return NoContent();
+}
