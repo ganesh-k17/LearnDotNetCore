@@ -72,3 +72,9 @@ private void iPhoneRoute(IIApplicationBuilder obj)
 
 }
 ```
+
+## Reference
+
+https://www.tutorialsteacher.com/core/aspnet-core-middleware
+https://www.youtube.com/watch?v=H3EbflpXVmo
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/extensibility?view=aspnetcore-7.0
