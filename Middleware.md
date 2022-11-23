@@ -55,11 +55,20 @@ internal class EnvironmentMiddleWare
 }
 ```
 
+## Map Middleware
 
-
-```
+```c#
 app.Map("/stuff", a => a.Run(async context =>{
 	context.Response.ContentType = "Text/html";
 	await context.Response.WriteAsync("Hello World in Stuff!");
 }));
+```
+
+```c#
+app.MapWhen(context => context.Request.Headers["UserAgent"].Contains('Apple-iPhone'), iphoneRoute); 
+
+private void iPhoneRoute(IIApplicationBuilder obj)
+{
+
+}
 ```
