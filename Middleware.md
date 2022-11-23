@@ -11,9 +11,9 @@ provided middleware, or your own custom middleware. We can set the order of midd
 in the request pipeline. Each middleware adds or modifies http request and optionally passes control to the next
 middleware component. The following figure illustrates the execution of middleware components.
 
-![middleware-1](images/middleware-1.jpg "middleware")
+![middleware-1](~/images/middleware-1.jpg "middleware")
 
-![middleware-2](images/middleware-2.jpg "middleware")
+![middleware-2](~/images/middleware-2.jpg "middleware")
 
 Middleware allows us to introduce additional logic before or after executing an HTTP request.
 
