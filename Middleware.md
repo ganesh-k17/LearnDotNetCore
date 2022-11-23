@@ -1,5 +1,14 @@
 # Middleware
 
+## What is middleware in ASP .NET Core?
+
+Middleware allows us to introduce additional logic before or after executing an HTTP request.
+
+There are three approaches to creating middleware:
+- With Request Delegates
+- By Convention
+- Factory-Based
+
 ```c#
 app.UseMiddleware<EnvironmentMiddleWare>();
 
