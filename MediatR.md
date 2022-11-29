@@ -41,3 +41,4 @@ public class Startup
 
 https://code-maze.com/cqrs-mediatr-in-aspnet-core/
 https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c
+https://nishanc.medium.com/understanding-cqrs-pattern-using-net-core-mediatr-3658263cfb16
