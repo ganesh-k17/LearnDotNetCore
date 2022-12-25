@@ -241,3 +241,10 @@ public async Task<ActionResult> DeleteMultipleProduct([FromQuery]int id)
 * Securing APIs
 * API Design
 * ASP .Net Core Security
+
+## Reference:
+
+* https://dotnet.microsoft.com/en-us/learn/dotnet/architecture-guides?utm_source=aspnet-start-page&utm_campaign=vside
+* https://learn.microsoft.com/en-us/training/modules/microservices-aspnet-core/
+* https://github.com/dotnet-architecture/eShopOnContainers?WT.mc_id=dotnet-35129-website
+* https://learn.microsoft.com/en-gb/training/paths/create-microservices-with-dotnet/
