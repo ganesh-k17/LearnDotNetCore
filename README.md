@@ -248,3 +248,4 @@ public async Task<ActionResult> DeleteMultipleProduct([FromQuery]int id)
 * https://learn.microsoft.com/en-us/training/modules/microservices-aspnet-core/
 * https://github.com/dotnet-architecture/eShopOnContainers?WT.mc_id=dotnet-35129-website
 * https://learn.microsoft.com/en-gb/training/paths/create-microservices-with-dotnet/
+* https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c
